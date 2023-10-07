@@ -63,3 +63,22 @@ print(all(['a' < 'b', 'c' < 'b']))
 # print(all(int(i) > 0 for i in list_of_n) and any(str(j) == str(j)[::-1] for j in list_of_n))
 
 print(all([int(i) > 0 for i in list_of_n]) and any([str(j) == str(j)[::-1] for j in list_of_n]))
+
+"""
+sorted function sorts the given input treating it as an iterable and returns the result in a list format
+sorting is ascending by default
+Syntax: sorted(<variable_name_of_value_to_be_sorted>, key = <function_to_sort_the array>, reverse = <bool_value>)
+<variable_name_of_value_to_be_sorted> --> the value to be sorted
+<function_to_sort_the_array> --> the sorting order must be given in the reverse order separated by commas
+reverse --> True to sort it in the descending order
+"""
+input_string = "Sorting1234"
+
+# Sort the string based on custom criteria
+sorted_string = sorted(input_string, key=lambda x: (x.isdigit(), x.isdigit() and int(x) % 2 == 0, x.isupper(), x))
+print(sorted_string)
+
+# Join the sorted characters to form the final string
+result = ''.join(sorted_string)
+
+print(result)
