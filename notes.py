@@ -12,21 +12,21 @@ print(INT1 / INT2)  # Float Division
 
 LEAP_YEAR_TO_CHECK = 2000
 
-"""
+'''
 A year is a leap year if it is divisible by 400 or it is divisible by 4 and not by 100.
-"""
+'''
 
 LEAP_YEAR_STATUS = LEAP_YEAR_TO_CHECK % 400 == 0 or (
 		LEAP_YEAR_TO_CHECK % 4 == 0 and LEAP_YEAR_TO_CHECK % 100 != 0
 )
 print(LEAP_YEAR_STATUS)
 
-'''
+"""
 In print statement,
 	Default end parameter value is '\n' 
 	Change end parameter value by end="" ("" means no space after print statement)
 	Change sep parameter value by sep="," 
-'''
+"""
 
 for i in range(1, 6):
 	print(i, end="")
@@ -42,3 +42,24 @@ print('leo', 'ram', sep='', end='@')
 print('gmail.com')
 
 print('Leoram')
+
+"""
+any returns True if any of the items is True
+all returns True if all of the items are True
+"""
+
+n = int(input())
+list_of_n = list(map(int, input().split()))  # maps the input elements by splitting it into a list of integers
+print(n, list_of_n)
+
+print(any([1 > 0, 1 == 0, 1 < 0]))
+
+print(any([1 < 0, 2 < 1, 3 < 2]))
+
+print(all(['a' < 'b', 'b' < 'c']))
+
+print(all(['a' < 'b', 'c' < 'b']))
+
+# print(all(int(i) > 0 for i in list_of_n) and any(str(j) == str(j)[::-1] for j in list_of_n))
+
+print(all([int(i) > 0 for i in list_of_n]) and any([str(j) == str(j)[::-1] for j in list_of_n]))
